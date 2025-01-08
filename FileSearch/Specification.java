@@ -1,4 +1,4 @@
-package com.johnjiangtw0804;
+package com.johnjiangtw0804.repo.FileSearch;
 
 // in this case, T is file type
 // choose to no the abstract class because of no sharing states
