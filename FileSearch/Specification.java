@@ -6,7 +6,10 @@ package com.johnjiangtw0804.repo.FileSearch;
 // The Specifier pattern is a design pattern used to separate concerns in a system where the details of a specification or requirement are encapsulated in separate "specifier" objects,
 // which can then be combined, reused, or modified independently of the system that uses them. The Specifier pattern helps in decoupling the specification logic from the rest of the application.
 public interface Specification <T> {
+    // something need to implement
     boolean isSatisfiedBy(T item);
+
+    // could have some default
     default Specification<T> and(Specification<T> other) {
         // return a implementation of Specification<T>
         return (item) -> {return this.isSatisfiedBy(item) && other.isSatisfiedBy(item);};
