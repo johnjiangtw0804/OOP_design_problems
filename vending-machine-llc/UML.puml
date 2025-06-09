@@ -1,0 +1,45 @@
+@startuml
+title Vending Machine - State Pattern
+
+interface State {
+  +insertCoin()
+  +selectProduct()
+}
+
+class VendingMachine {
+  -idleState: IdleState
+  -insertState: InsertState
+  -selectState: SelectState
+  -currentState: State
+  +setState(s: State)
+  +insertCoin()
+  +selectProduct()
+}
+
+class IdleState {
+  -v: VendingMachine
+  +insertCoin()
+  +selectProduct()
+}
+
+class InsertState {
+  -v: VendingMachine
+  +insertCoin()
+  +selectProduct()
+}
+
+class SelectState {
+  -v: VendingMachine
+  +insertCoin()
+  +selectProduct()
+}
+
+VendingMachine --> State : uses
+IdleState ..|> State
+InsertState ..|> State
+SelectState ..|> State
+VendingMachine *-- IdleState
+VendingMachine *-- InsertState
+VendingMachine *-- SelectState
+
+@enduml
